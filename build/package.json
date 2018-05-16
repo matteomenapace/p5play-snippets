@@ -1,6 +1,6 @@
 {
   "name": "p5play-snippets-build",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "p5play-snippets",
   "main": "build.js",
   "scripts": {

@@ -4,14 +4,7 @@ var he = require('he')
 
 var p5playDataURL = 'http://p5play.molleindustria.org/docs/data.json',
     outputPath = '/../snippets/p5play-snippets.json',
-    p5playDocsURL = 'http://p5play.molleindustria.org/docs/'
-
-// TODO
-/*
-descriptionMoreURL
-from  http://p5play.molleindustria.org/docs/allSprites
-to    http://p5play.molleindustria.org/docs/classes/p5.play.html#prop-allSprites
-*/
+    p5playDocsURL = 'http://p5play.molleindustria.org/docs/classes/'
 
 var snippet = {} //to build the snippets from the source json file
 
@@ -25,16 +18,14 @@ request(p5playDataURL, function (error, response, body)
 
     var obj = JSON.parse(body)
 
-    // var pick = obj.classitems[Math.round(Math.random() * 100)]
-    // console.log(pick)
-
     obj.classitems.forEach(function(element)
     {
       if (element.itemtype == 'property' || element.itemtype == 'method' )
       {
-        var name = element.name
-        var concatedName
-        var params = []
+        var name = element.name,
+            concatedName,
+            descriptionMoreURL = p5playDocsURL,
+            params = []
         if (element.params)
         {
           element.params.forEach(function(p)
@@ -53,7 +44,7 @@ request(p5playDataURL, function (error, response, body)
 
         function handleParams(p)
         {
-          if(p.optional)
+          if (p.optional)
           {
             params.push("[" + p.name + "]")
           }
@@ -63,7 +54,7 @@ request(p5playDataURL, function (error, response, body)
           }
         }
 
-        if(element.itemtype == 'method')
+        if (element.itemtype == 'method')
         {
           concatedName = name + '(' + params + ')'
         }
@@ -80,10 +71,10 @@ request(p5playDataURL, function (error, response, body)
             'prefix': null,
             'body': null,
             'description': null,
-            //'descriptionMoreURL': null,
+            'descriptionMoreURL': null
         }
         //set the prefix & body
-        if(element.itemtype == 'method')
+        if (element.itemtype == 'method')
         {
           snippet[concatedName].prefix = name + '(' + params + ')'
           snippet[concatedName].leftLabel = name + '()'
@@ -110,7 +101,7 @@ request(p5playDataURL, function (error, response, body)
           snippet[concatedName].body = name
         }
 
-        //set the discription
+        // set the description
         if (element.description)
         {
           //regex out html tags:
@@ -119,11 +110,10 @@ request(p5playDataURL, function (error, response, body)
           // console.log(element.description.toString())
           cleanDes = cleanDes.replace(/(<p>)|(<\/p>)|(<br>)/g,"") //remove p and br tags
           cleanDes = cleanDes.replace(/\r?\n|\r/g," ") //remove newlines
-
           // cleanDes  = cleanDes.replace(/(&lt;)/g,"<") //ascii to less than
           // cleanDes  = cleanDes.replace(/(&gt;)/g,">") //ascii to greater than
           cleanDes = he.decode(cleanDes) //use he to decode all html codes into characters
-          if(cleanDes.length > 230 )
+          if (cleanDes.length > 230 )
           {
             // cleanDes = cleanDes.substring(0, chopLength )
             cleanDes = cleanDes.replace(/^(.{230}[^\s]*).*/, "$1")
@@ -138,7 +128,14 @@ request(p5playDataURL, function (error, response, body)
         {
           snippet[concatedName].description = ""
         }
-        // snippet[concatedName].descriptionMoreURL = p5playDocsURL + name
+
+        // set the docs URL
+        descriptionMoreURL += element.class + '.html'
+        if (element.itemtype == 'method') descriptionMoreURL += '#method-'
+        else descriptionMoreURL += '#prop-'
+        descriptionMoreURL += name
+        snippet[concatedName].descriptionMoreURL = descriptionMoreURL
+        console.log(descriptionMoreURL)
       } // end typeCheck
     }) //end forEach
 
@@ -151,4 +148,4 @@ request(p5playDataURL, function (error, response, body)
   {
     console.error('could not reach the file at p5playDataURL')
   }
-})//close request
+}) //close request
