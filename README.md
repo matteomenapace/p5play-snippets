@@ -8,14 +8,14 @@ TODO
 
 - [ ] in README
 
-      - ![screenshot.png](NEEDS TO BE AN ABSOLUTE URL screenshot.png)
-
       - ### How to use it
 
       - ### How to install this package
         Don't forget to restart atom after install.
 
 -->
+
+![screenshot.png](https://raw.githubusercontent.com/matteomenapace/p5play-snippets/master/screenshot.png)
 
 ### Features
 
