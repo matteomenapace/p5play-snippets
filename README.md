@@ -29,7 +29,9 @@ TODO
   + a short description of each p5.play function
   + tab breakpoints at each p5.play function's arguments
   + p5.play label to help distinguish p5.play specific functions
+
   <!-- + 'More...' link to the p5 reference -->
+
   <!-- + right click p5.play functions within your sketch, and use the contextual menu to `Find in the p5js reference` -->
 
 ### How to re-build the snippets
