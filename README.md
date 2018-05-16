@@ -1,9 +1,11 @@
-# p5js-snippets
-[p5.js](http://p5.js) snippets for [atom.io](http://atom.io)
+# p5play-snippets
 
-![screenshot.png](https://raw.github.com/bmoren/p5js-snippets/master/screenshot.png)
+[p5.play](http://p5play.molleindustria.org/) snippets for [atom.io](http://atom.io)
 
-### features include:
+![screenshot.png](screenshot.png)
+
+### Features
+
   + auto complete suggestions
   + a short description of each p5 function
   + 'More...' link to the p5 reference
@@ -11,13 +13,20 @@
   + friendly p5 logo to help distinguish p5 specific functions
   + right click p5js functions within your sketch, and use the contextual menu to `Find in the p5js reference`
 
+### How to install it
+
 Don't forget to restart atom after install.
 
----
+### How to use it
 
-p5js-snippets was last compiled for p5.js@ 0.6.0
+TODO
 
-to build the snippets from https://p5js.org/reference/data.json:
- + `cd` to `build`
+### How to edit/build it
+
+<!-- Last compiled for p5.js@ 0.6.0 -->
+
+To build the snippets from http://p5play.molleindustria.org/docs/data.json:
+
+ + `cd` to the `build` folder
+ + `npm install`
  + `node build.js`
-

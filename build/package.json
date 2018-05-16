@@ -1,13 +1,13 @@
 {
-  "name": "p5js-snippets-build",
-  "version": "0.5.5",
-  "description": "p5js-snippets",
+  "name": "p5play-snippets-build",
+  "version": "0.0.1",
+  "description": "p5play-snippets",
   "main": "build.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "@bmoren",
-  "repository": "https://github.com/bmoren/p5js-snippets",
+  "author": "@matteomenapace",
+  "repository": "https://github.com/matteomenapace/p5play-snippets",
   "license": "MIT",
   "dependencies": {
     "request": "^2.79.0",

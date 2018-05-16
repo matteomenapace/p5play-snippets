@@ -1,10 +1,11 @@
 {
-  "name": "p5js-snippets",
-  "version": "0.4.1",
-  "description": "p5.js snippets | http://p5js.org ",
-  "main": "./lib/p5js-snippets.js",
+  "name": "p5play-snippets",
+  "version": "0.0.1",
+  "description": "p5.play snippets | http://p5play.molleindustria.org ",
+  "main": "./lib/p5play-snippets.js",
   "keywords": [
     "p5js",
+    "p5play",
     "p5xjs",
     "processing",
     "creative",
@@ -22,7 +23,7 @@
     "request": "^2.85.0",
     "shell": "^0.5.0"
   },
-  "author": "@bmoren",
-  "repository": "https://github.com/bmoren/p5js-snippets",
+  "author": "@matteomenapace",
+  "repository": "https://github.com/matteomenapace/p5play-snippets",
   "license": "MIT"
 }

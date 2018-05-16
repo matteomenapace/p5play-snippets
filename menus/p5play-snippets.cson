@@ -1,0 +1,16 @@
+{
+  'menu': [
+    {
+      'label': 'Packages'
+      'submenu': [
+        'label': 'p5play-snippets'
+        'submenu': [
+          {
+            'label': 'Open p5play docs'
+            'command': 'p5play-snippets:ref'
+          }
+        ]
+      ]
+    }
+  ]
+}
