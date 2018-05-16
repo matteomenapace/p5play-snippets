@@ -1,6 +1,6 @@
 {
   "name": "p5play-snippets",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "p5.play snippets | http://p5play.molleindustria.org ",
   "main": "./lib/p5play-snippets.js",
   "keywords": [
